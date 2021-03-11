@@ -15,7 +15,7 @@ module.exports = {
         name: "Seimi Terasaki",
         short_name: "Seimi Terasaki",
         start_url: "/",
-        icon: "./src/images/favicon.png",
+        icon: "src/images/favicon.png",
       },
     },
     `gatsby-transformer-sharp`,
@@ -40,13 +40,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content`,
         name: `content`,
-      },
-    },
-    {	
-      resolve: 'gatsby-source-filesystem',	
-      options: {	
-        path: `${__dirname}/static/`,	
-        name: 'static',	
       },
     },
     `gatsby-plugin-sharp`,

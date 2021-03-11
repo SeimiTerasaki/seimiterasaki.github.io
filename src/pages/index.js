@@ -1,10 +1,9 @@
 import React, {useEffect} from "react"
 import TransitionLink from "gatsby-plugin-transition-link"
+import BackgroundImage from 'gatsby-background-image'
 import {Linear, TimelineMax, gsap} from "gsap/all"
-import Scrollbar from 'smooth-scrollbar'
-import {ScrollTrigger} from "gsap/ScrollTrigger"
 
-
+import {useIndexImages} from "../hooks/useIndexImages"
 import SEO from "../components/seo"
 
 import '../css/tailwind.css'
@@ -12,14 +11,16 @@ import '../css/main.css'
 
 function exitPageRight(exit, node){
   const tl = new TimelineMax();
-  tl.to(".logo", .8, {y: "-20px", opacity: 0})
+  tl.to(".index-image-right", .5, {opacity: 0})
+  .to(".logo", .8, {y: "-20px", opacity: 0})
   .to(".right", .8, {width: '100vw', zIndex: 100, ease: Linear.easeIn})
   .to(".nav-transform", .8, {opacity: 0, ease: Linear.easeIn}, .8);
 }
 
 function exitPageLeft(exit, node){
   const tl = new TimelineMax();
-  tl.to(".logo", .8, {y: "-20px", opacity: 0})
+  tl.to(".index-image-left", .5, {opacity: 0})
+  .to(".logo", .8, {y: "-20px", opacity: 0}, .5)
   .to(".left", .8, {width: '100vw', zIndex: 100, ease: Linear.easeIn}, .8)
   .to(".nav-transform", .8, {opacity: 0, ease: Linear.easeIn}, .8);
 }
@@ -34,24 +35,31 @@ function enterAnim(){
 }
 
 export default function IndexPage() {
+  const {edges} = useIndexImages()
+ 
 
   useEffect(() => {
     enterAnim();
 
-    const scroller = document.querySelector("[data-scrollbar]");
-    const bodyScrollBar = Scrollbar.init(scroller);
+    var navRight = document.getElementById('navRight');
+    var navLeft = document.getElementById('navLeft');
   
-    gsap.registerPlugin(ScrollTrigger);
+    navRight.addEventListener('mouseenter', function() {
+      gsap.to('.index-image-right', .8, { autoAlpha: 1 })
+    })
     
-    ScrollTrigger.scrollerProxy("body", {
-      scrollTop(value) {
-        if (arguments.length) {
-          bodyScrollBar.scrollTop = value;
-          document.getElementsByTagName("body").setAttribute("class", "scrolling");
-        }
-        return bodyScrollBar.scrollTop;
-      },
-    });
+    navRight.addEventListener('mouseleave', function() {
+      gsap.to('.index-image-right', .8,{ autoAlpha: 0 })
+    })
+   
+    navLeft.addEventListener('mouseenter', function() {
+      gsap.to('.index-image-left', .8,{ autoAlpha: 1 })
+    })
+    
+    navLeft.addEventListener('mouseleave', function() {
+      gsap.to('.index-image-left', .8,{ autoAlpha: 0 })
+    })
+
   }, [])
 
   return(
@@ -61,27 +69,32 @@ export default function IndexPage() {
         <div className="navbar-side">
         <TransitionLink to="/about" exit={{ trigger: ({ exit, node }) => exitPageRight(exit, node), length: 2}}
             entry={{ delay: 2}}>
-            <div className="absolute nav-transform nav-right font-heading"><p>About</p></div>
+            <div className="absolute nav-transform nav-right font-heading example">
+              <p><span className="hover hover-3 white" id="navRight">About</span></p></div>
         </TransitionLink>
         <TransitionLink to="/projects" exit={{ trigger: ({ exit, node }) => exitPageLeft(exit, node), length: 2}}
           entry={{ delay: 2}}>
-              <div className="absolute nav-transform nav-left font-heading"><p><span>Works</span></p></div>
+              <div className="absolute nav-transform nav-left font-heading example">
+                <p><span className="hover hover-3 e3a39c" id="navLeft">Works</span></p></div>
         </TransitionLink>
         </div>
       
       <div className="wrap h-screen">
         <div className="left">
-          <div className="logo">
-            <p className="font-heading text-7xl main-title">Seimi Terasaki</p>
-            <br/>
-              <p className="text-2xl">Full-stack Web Developer</p>
-          </div>
+          <BackgroundImage className="index-image-left" id="imgLeft" fluid={edges[1].node.childImageSharp.fluid} alt={edges[1].node.name} />
+            <div className="logo z-20">
+              <p className="font-heading text-7xl main-title z-30">Seimi Terasaki</p>
+              <br/>
+                <p className="text-2xl z-30">Full-stack Web Developer</p>
+            </div>
+         
         </div>
         <div className="right">
-          <div className="logo">
-            <h1 className="font-heading text-7xl main-title">Seimi Terasaki</h1>
+        <BackgroundImage className="index-image-right" id="imgRight" fluid={edges[0].node.childImageSharp.fluid} alt={edges[0].node.name} />
+          <div className="logo z-20">
+            <h1 className="font-heading text-7xl main-title z-30">Seimi Terasaki</h1>
             <br/>
-              <p className="text-2xl">Full-stack Web Developer</p>
+              <p className="text-2xl z-30">Full-stack Web Developer</p>
           </div>
         </div>
       </div>

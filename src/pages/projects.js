@@ -15,7 +15,7 @@ import '../css/tailwind.css'
 function exitPage(exit, node){
 	const tl = new TimelineMax();
 	tl.to(".slick-active .project-title-container", .8, {y: "470px", opacity: 0, ease:Linear.easeNone})
-	  .to(".slick-active", {scale: 2, duration: 2}, 1);
+	  .to(".slick-active", 1, {scale: 2}, .8);
   }
 
 function enterAnim(){

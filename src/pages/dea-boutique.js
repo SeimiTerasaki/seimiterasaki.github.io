@@ -208,28 +208,28 @@ export default function DEA() {
       
         <div className="section-0 grid grid-cols-2 gap-x-24 pb-20">
           <div className="col-1">
-            <div className="gs_reveal">
+            <div className="gs_reveal mt-10 mb-12">
               <Img
                 fluid={data.markdownRemark.frontmatter.gallery[2].childImageSharp.fluid}
-                className="mt-8 img-shadow"
+                className="img-shadow"
                 alt={data.markdownRemark.frontmatter.gallery[2].id} />
             </div>
-            <div className="gs_reveal">
+            <div className="gs_reveal mb-12">
               <Img
                 fluid={data.markdownRemark.frontmatter.gallery[3].childImageSharp.fluid}
-                className="mt-8 img-shadow"
+                className="img-shadow"
                 alt={data.markdownRemark.frontmatter.gallery[3].id} />
             </div>
             <div className="gs_reveal">
               <Img
                 fluid={data.markdownRemark.frontmatter.gallery[4].childImageSharp.fluid}
-                className="mt-8 img-shadow"
+                className="img-shadow"
                 alt={data.markdownRemark.frontmatter.gallery[4].id} />
             </div>
           </div>
 
           <div className="col-2">
-            <div className="gs_reveal mt-100">
+            <div className="gs_reveal mt-100 mb-12">
               <Img
                 fluid={data.markdownRemark.frontmatter.gallery[0].childImageSharp.fluid}
                 className="mobile-image img-shadow"
@@ -238,7 +238,7 @@ export default function DEA() {
             <div className="gs_reveal">
               <Img
                 fluid={data.markdownRemark.frontmatter.gallery[1].childImageSharp.fluid}
-                className="img-shadow mt-8"
+                className="img-shadow"
                 alt={data.markdownRemark.frontmatter.gallery[1].id} />
             </div>
           </div>

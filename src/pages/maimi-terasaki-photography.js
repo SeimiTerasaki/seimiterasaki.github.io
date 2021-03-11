@@ -74,7 +74,7 @@ export default function MTPhotography() {
       gallery {
         name
         childImageSharp {
-          fluid(maxWidth: 1920){
+          fluid(maxWidth: 400){
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -207,37 +207,40 @@ export default function MTPhotography() {
        <div className="sm:px-8 md-px-16 lg:px-20 grid-container pb-24">
 
         <div className="section-0 grid grid-cols-2 gap-x-24 pb-20">
+
           <div className="col-1">
-
-            <div className="gs_reveal mb-12">
-              <Img
-                fluid={data.markdownRemark.frontmatter.gallery[0].childImageSharp.fluid}
-                className="max-w-sm img-shadow"
-                alt={data.markdownRemark.frontmatter.gallery[0].name} />
+            <div className="gs_reveal mt-10 mb-12">
+            <Img
+                fluid={data.markdownRemark.frontmatter.gallery[7].childImageSharp.fluid}
+                className="img-shadow"
+                alt={data.markdownRemark.frontmatter.gallery[7].name} />
             </div>
             <div className="gs_reveal">
-              <Img
-                fluid={data.markdownRemark.frontmatter.gallery[1].childImageSharp.fluid}
-                className="mobile-image img-shadow"
-                alt={data.markdownRemark.frontmatter.gallery[1].name} />
-            </div>
-          </div>
-          
-
-          <div className="col-2">
-            <div className="gs_reveal mt-100 ">
-              <Img
-                fluid={data.markdownRemark.frontmatter.gallery[2].childImageSharp.fluid}
-                className="mobile-image img-shadow"
-                alt={data.markdownRemark.frontmatter.gallery[2].name} />
-            </div>
-            <div className="gs_reveal">
-              <Img
+            <Img
                 fluid={data.markdownRemark.frontmatter.gallery[3].childImageSharp.fluid}
                 className="max-w-sm mt-8 img-shadow"
                 alt={data.markdownRemark.frontmatter.gallery[3].name} />
             </div>
-
+        </div>
+        <div className="col-2">
+          <div className="gs_reveal mb-12 mt-100">
+            <Img
+              fluid={data.markdownRemark.frontmatter.gallery[0].childImageSharp.fluid}
+              className="mobile-image img-shadow"
+              alt={data.markdownRemark.frontmatter.gallery[0].name} />
+            </div>
+            <div className="gs_reveal mb-12">
+              <Img
+                fluid={data.markdownRemark.frontmatter.gallery[2].childImageSharp.fluid}
+                className="img-shadow"
+                alt={data.markdownRemark.frontmatter.gallery[2].name} />
+            </div>
+            <div className="gs_reveal mb-12">
+              <Img
+                fluid={data.markdownRemark.frontmatter.gallery[1].childImageSharp.fluid}
+                className="img-shadow"
+                alt={data.markdownRemark.frontmatter.gallery[1].name} />
+            </div>
           </div>
 
         </div>

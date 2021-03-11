@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap');
 
 .font-heading{
-	font-family: 'Bodoni Moda';
+	font-family: 'IM Fell French Canon SC', serif;
 }
 
 @media screen and (max-width: 768px){
@@ -42,10 +42,13 @@
 	.project-title{
 		font-size: 100px !important;
 		line-height:6rem !important;
-	}  
+	}
+	.sm-hidden{
+		display: none;
+	}
 }
 
-@media screen and (max-width: 426px){
+@media screen and (max-width: 608px){
 	.text-8xl{
 		font-size: 3rem !important;
 		line-height: 1 !important;
@@ -57,14 +60,17 @@
 	.text-5xl {
 		font-size: 2rem !important;
 	}
-
 	.text-3xl {
 		font-size: 1.5rem !important;
 	}
 	.text-2xl,
+	.text-lg,
 	.text-xl
 	{
 		font-size: 1rem !important;
+	}
+	.mt-100{
+		margin-top: 3rem !important;
 	}
 	.project-cover{
 		height: 40vh !important;
@@ -80,7 +86,27 @@
 	.project-title{
 		font-size: 2.5rem !important;
 		line-height:3rem !important;
-	} 
+	}
+	.bottom-container{
+		padding:0 5rem;
+	}
+	.marquee-wrapper{
+		margin: 0 !important;
+		height: 60px !important;
+	}
+	.grid-cols-2{
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		padding: 0 3rem;
+	}
+	.about-img{
+		height: 150px !important;
+    	width: 150px !important;
+	}
+
+	.xs-hidden, br{
+		display: none;
+	}
+
 }
 
 html{
@@ -114,12 +140,6 @@ body, html {
 	grid-template-columns: 1fr 2fr;
 	align-items: center;
 	position: relative;
-}
-
-.about-img{
-	max-width: 400px;
-	box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
-	height: auto;
 }
 
 .bg-image-bold-text{
@@ -281,11 +301,54 @@ body, html {
 	color: #ff9170;
 }
 
-.color-dd545b{
-	color: #dd545b;
+.hover{
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	transition: all 0.2s ease-in-out;
+	position: relative;
 }
 
+.hover:before, .hover:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 0px;
+    height: 1px;
+    margin: 5px 0 0;
+    transition: all 0.2s ease-in-out;
+    transition-duration: 0.75s;
+    opacity: 0;
+}
 
+.e3a39c.hover:before,
+.e3a39c.hover:after{
+	background-color: #e3a39c;
+}
+
+.white.hover:before,
+.white.hover:after{
+	background-color: #fff;
+}
+
+.hover.hover-3:before {
+    left: 50%;
+}
+
+.hover.hover-3:after {
+    right: 50%;
+}
+
+.example:hover .hover.hover-3:before,
+.example:hover .hover.hover-3:after{
+    width: 50%;
+}
+
+.example:hover .hover:before,
+.example:hover .hover:after {
+    width: 100%;
+    opacity: 1;
+}
 
 .opacity-50{
 	opacity: .5 !important;
@@ -353,6 +416,17 @@ body, html {
 	margin-left: 25vw;
 }
 
+.index-image-left,
+.index-image-right{
+	width: 350px;
+    height: 500px;
+    margin: 0 auto;
+    top: 50%;
+	transform: translate(0, -50%);
+	opacity: 0;
+	visibility: hidden;
+}
+
 
 .wrap{
 	position: absolute;
@@ -402,7 +476,7 @@ body, html {
 	position: relative; 
 	height: 120px;
 	width: 100%;
-	margin-top: 4vh;
+	margin: 4vh 0;
 }
 
 .marquee-animation{
@@ -429,11 +503,14 @@ body, html {
 	bottom: 7vh;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 70%;
+	width: 100%;
+	align-items: center;
 }
 
-.about-main{
-	margin: 5vh 0;
+.about-img{
+	height: 250px;
+	width: 250px;
+	border-radius: 50%;
 }
 
 /** Logo **/

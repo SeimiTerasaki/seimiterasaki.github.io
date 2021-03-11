@@ -1,14 +1,14 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useAboutImage = () => {
+export const useIndexImages = () => {
   const {allFile} = useStaticQuery(graphql`
   {
-    allFile(filter: {name: {eq: "aboutme-image"}}) {
+    allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, sourceInstanceName: {eq: "main"}}) {
         edges {
           node {
             name
             childImageSharp {
-                fluid(maxWidth: 589){
+                fluid(maxWidth: 2000){
                     ...GatsbyImageSharpFluid_withWebp
                 }
             }

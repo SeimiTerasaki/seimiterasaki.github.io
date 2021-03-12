@@ -81,7 +81,7 @@ export default function IndexPage() {
       
       <div className="wrap h-screen">
         <div className="left">
-          <BackgroundImage className="index-image-left" id="imgLeft" fluid={edges[1].node.childImageSharp.fluid} alt={edges[1].node.name} />
+          <BackgroundImage className="index-image-left" id="imgLeft" fluid={edges[2].node.childImageSharp.fluid} alt={edges[2].node.name} />
             <div className="logo z-20">
               <p className="font-heading text-7xl main-title z-30">Seimi Terasaki</p>
               <br/>

@@ -1,7 +1,7 @@
 import "./src/css/tailwind.css"
 import './src/css/main.css'
 import "@fontsource/raleway"
-import "@fontsource/bodoni-moda"
+import "@fontsource/im-fell-french-canon-sc"
 
 
 import {gsap, Power2, TimelineMax} from "gsap/all"

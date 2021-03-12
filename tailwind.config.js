@@ -5,7 +5,7 @@ module.exports = {
     fontFamily: {
       'sans': ['Raleway'],
       'serif': ['Georgia'],
-      'heading': ['Bodoni Moda']
+      'heading': ['IM Fell French Canon SC']
     },
     extend: {
       colors: {

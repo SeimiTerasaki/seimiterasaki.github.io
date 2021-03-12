@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "@fontsource/bodoni-moda"
+import "@fontsource/im-fell-french-canon-sc"
 
 import "./css/main.css"
 

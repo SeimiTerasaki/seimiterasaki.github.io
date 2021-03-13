@@ -7,10 +7,8 @@ import {Linear, TimelineMax} from "gsap/all"
 import Header from "../components/header"
 import {useSiteMarkdown} from "../hooks/useSiteMarkdown"
 
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import '../css/main.css'
-import '../css/tailwind.css'
+import "../css/slick.css"
+import "../css/slick-theme.css"
 
 function exitPage(exit, node){
 	const tl = new TimelineMax();

@@ -2,7 +2,7 @@
   "name": "seimi-terasaki-portfolio",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com/SeimiTerasaki/seimiterasaki.github.io/",
+  "repository": "https://github.com/SeimiTerasaki/seimiterasaki.github.io",
   "author": "Seimi Terasaki",
   "license": "MIT",
   "scripts": {

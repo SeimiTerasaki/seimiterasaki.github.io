@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest # Action uses Docker so only Linux is supported
     steps:
       - uses: actions/checkout@v1 # Checkout your triggered branch
-      - - uses: enriikke/gatsby-gh-pages-action@v2
+      - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           publishBranch: 'main' # Not required, default publishing branch is master
           deploy-branch: 'gh-pages'

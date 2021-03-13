@@ -14,5 +14,5 @@ jobs:
         with:
           publishBranch: 'main' # Not required, default publishing branch is master
           deploy-branch: 'gh-pages'
-          token: ${{ secrets.PORTFOLIO }} # Your personal access token of GitHub, read more below of how to obtain one and keep it safe
+          access-token: ${{ secrets.PORTFOLIO }} # Your personal access token of GitHub, read more below of how to obtain one and keep it safe
           

@@ -63,7 +63,7 @@ const About = () => {
                 </div>
                 <div className="grid grid-cols-2 sm:px-8 md-px-16 lg:px-20 grid-container">
                   <div className="margin-auto items-center">
-                    <Img className="about-img" fluid={edges[2].node.childImageSharp.fluid} alt={edges[2].node.name} /> 
+                    <Img className="about-img" fluid={edges[0].node.childImageSharp.fluid} alt={edges[0].node.name} /> 
                   </div>
                   <div className="about-main font-heading z-20 text-center">
                     <p> Hi there! Thanks for checking out my page. </p>

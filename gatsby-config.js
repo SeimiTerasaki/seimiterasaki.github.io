@@ -4,7 +4,7 @@ const path = require(`path`)
 module.exports = {
   siteMetadata: {
     title: `Seimi Terasaki`,
-    description: `Professional portfolio of Seimi Terasaki. Web Develop | JAM stack | MERN stack`,
+    description: `Professional portfolio of Seimi Terasaki. Full-Stack Web Developer | React | JAM stack`,
     author: `Seimi Terasaki`,
     siteUrl: `https://seimiterasaki.github.io/`,
   },

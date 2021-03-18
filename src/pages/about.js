@@ -39,7 +39,7 @@ const About = () => {
       }, [])
 
     return(
-        <section className="h-screen w-full bg-e3a39c text-white">
+        <section className="h-screen w-full text-white bg-e3a39c">
             <SEO title="Full Stack Developer from Tokyo" />
             <header className="w-full absolute top-0 left-0 z-10">
               <div className="header bg-transparent">
@@ -54,7 +54,7 @@ const About = () => {
                 </div>
               </div>
             </header>
-            <div className="pt-24">
+            <div className="pt-24 bg-e3a39c">
                 <div className="marquee-wrapper font-heading">
                     <div className="marquee-animation">
                         <span>An APPLE per day keeps the code clean...</span>
@@ -65,7 +65,7 @@ const About = () => {
                   <div className="margin-auto items-center">
                     <Img className="about-img" fluid={edges[0].node.childImageSharp.fluid} alt={edges[0].node.name} /> 
                   </div>
-                  <div className="about-main font-heading z-20 text-center">
+                  <div className="about-main font-serif z-20 text-center">
                     <p> Hi there! Thanks for checking out my page. </p>
                     <br/>
                     <p>
@@ -76,7 +76,7 @@ const About = () => {
                     <br/>
                     <TransitionLink to="/projects" exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
                       entry={{ delay: 2}}>
-                        <div className="text-3xl example">
+                        <div className="text-3xl example font-heading my-projects">
                           <span className="hover hover-3 white">See my projects</span>
                         </div>
                     </TransitionLink>
@@ -112,7 +112,7 @@ const About = () => {
                   </div>
                   
                 </div>
-                <footer className="fixed bottom-0 p-4 text-xs">©Seimi Terasaki 2021</footer>
+                <footer className="fixed bottom-0 p-4 text-xs copywrite">©Seimi Terasaki 2021</footer>
             </div>
         </section>
     )

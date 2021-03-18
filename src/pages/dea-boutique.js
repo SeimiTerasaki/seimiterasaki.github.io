@@ -189,7 +189,8 @@ export default function DEA() {
             <p  className="text-2xl font-heading">{data.markdownRemark.frontmatter.description}</p>
             <br/>
             <a href={data.markdownRemark.frontmatter.link}
-            className="project-page-link text-xl font-heading text-white">View the Website</a>
+            className="project-page-link text-xl font-serif font-semibold example text-white">
+              <span className="hover hover-3">View the Website</span></a>
           </div>
         </div>
       </div>

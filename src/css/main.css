@@ -81,8 +81,20 @@
 		font-size: 2.5rem !important;
 		line-height:3rem !important;
 	}
+	.about-main{
+		margin: 20px 0;
+	}
+	.my-projects{
+		margin-top: 10px;
+	}
 	.bottom-container{
-		padding:0 5rem;
+		width: auto !important;
+		padding: 0 15vw;
+		bottom: auto !important;
+		position: relative;
+	}
+	footer{
+		position: relative !important;
 	}
 	.marquee-wrapper{
 		margin: 0 !important;

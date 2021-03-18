@@ -190,7 +190,7 @@ export default function DEA() {
             <br/>
             <a href={data.markdownRemark.frontmatter.link}
             className="project-page-link text-xl font-serif font-semibold example text-white">
-              <span className="hover hover-3">View the Website</span></a>
+              <span className="hover hover-3 white">View the Website</span></a>
           </div>
         </div>
       </div>

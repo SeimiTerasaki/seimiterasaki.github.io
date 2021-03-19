@@ -1,15 +1,4 @@
 @media screen and (max-width: 768px){
-	#grid{
-		grid-template-columns: 1fr;
-	}
-	.grid-row-wrapper {
-		grid-template-columns: none !important;
-		gap: unset !important;
-	}
-	.font-10{
-		font-size:10px;
-	}
-
 	.text-8xl{
 		font-size: 4rem !important;
 		line-height: 1 !important;
@@ -18,20 +7,12 @@
 	.text-2xl{
 		font-size: 1.5rem !important;
 	}
-	.grid-col-1fr{
-		grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-	}
-
 	.project-image{
 		margin-top: 0 !important;
 		padding-top: 3rem !important;
 	}
 	.padding-2{
 	   padding: 2rem !important; 
-	}
-	.gap-12 {
-		grid-gap: 1rem;
-		gap: 1rem;
 	}
 	.project-title{
 		font-size: 100px !important;
@@ -82,14 +63,14 @@
 		line-height:3rem !important;
 	}
 	.about-main{
-		margin: 20px 0;
+		margin: 20px 0 !important;
 	}
 	.my-projects{
-		margin-top: 10px;
+		margin-top: 10px !important;
 	}
 	.bottom-container{
 		width: auto !important;
-		padding: 0 15vw;
+		padding: 0 15vw !important;
 		bottom: auto !important;
 		position: relative;
 	}
@@ -110,7 +91,7 @@
 	}
 
 	.xs-hidden, br{
-		display: none;
+		display: none !important;
 	}
 
 }
@@ -122,7 +103,7 @@
 	.project-header-description {
 		margin-top: 30vh !important;
 		max-width: 230px !important;
-		text-align: center;
+		text-align: center !important;
 	}
 	.max-w-sm {
 		max-width: 17rem !important;
@@ -152,27 +133,6 @@ body, html {
 	overflow-x: hidden !important;
 }
 
-.bottom-5vh{
-	bottom: 5vh;
-}
-
-#grid-botton-wrapper{
-	top: 25rem;
-}
-
-.grid-col-2fr-1fr{
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	position: relative;
-}
-
-.grid-col-1fr{
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	align-items: center;
-	position: relative;
-}
-
 .bg-image-bold-text{
 	position: absolute;
 	font-weight: 700!important;
@@ -180,11 +140,6 @@ body, html {
 	font-size:10rem;
 	left: 0;
     right: 0;
-}
-
-.center-hero{
-	top:25%;
-	left: 25%;
 }
 
 .nav-transform{
@@ -216,92 +171,19 @@ body, html {
 	line-height: 1;
 }
 
+.text-7xl{
+	font-size: 4.5rem;
+	line-height: 1;
+ }
+
 .margin-auto{
 	margin: 0 auto;
-}
-
-.height-300{
-	height: 300px;
-}
-
-.ml-25{
-	margin-left: 25%;
-}
-
-.left-50{
-	left: 50%;
 }
 
 .header-gradient{
 	padding-top: 10rem;
 	background: linear-gradient(to bottom, #000000 0%, #555 50%, #fff 100%);
 }
-
-.side-lines{
-	color: #fff;
-	text-align: center; 
-	border-bottom: 1px solid #fff; 
-	line-height: 0.1em;
-	margin: 10px 0 20px;
-	transform: rotateZ(-90deg) translateX(-50%);
-	width: 100%;
-	margin-left: -20%;
-	margin-top: 60%;
-}
-
-.side-lines > span{
-	background-color: #111; 
-	padding:0 10px; 
-}
-
-.border-line{
-	border-right: 1px solid #e2e8f0;
-	margin: 0 auto;
-	height: 100%;
-	width: 1px;
-	margin-right: 38px;
-}
-
-
-.ml-44{
-	margin-left: 11rem;
-}
-
-.revolving-background{
-	animation: background-img-animation 100s linear infinite;
-}
-
-@keyframes background-img-animation {
-	100%{
-	 background-position:-1000px 0px;
-	}
-}
-
- .tl-edges{
-	overflow-x:visible;
- }
-
- .border-bottom{
-	border-bottom: 1px solid #222;
- }
-
- .project-image{
-	width:90%;
-	margin: 0 auto;
- }
-
- .text-7xl{
-	font-size: 4.5rem;
-	line-height: 1;
- }
-
- .h-80{
-	 height: 20rem;
- }
-
- .margin-bottom-50{
-	 margin-bottom: -50px;
- }
 
 .bg-efefef{
 	background-color: #efefef;
@@ -311,22 +193,9 @@ body, html {
 	background-color: rgb(247, 246, 245);
 }
 
-.bg-CAE3E1{
-	background-color: #CAE3E1;
-}
-
-.bg-f3eee8{
-	background-color: #f3eee8;
-}
-
 .bg-e3a39c{
 	background-color: #e3a39c;
 }
-
-.bg-ff9170{
-	background-color: #ff9170;
-}
-
 
 .color-ff9170{
 	color: #ff9170;
@@ -385,13 +254,6 @@ body, html {
 	opacity: .5 !important;
 }
 
-.center-div{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-}
-
 .center-flex{
 	position: relative;
 	display: flex;
@@ -404,16 +266,8 @@ body, html {
 	margin: 0 auto;
 }
 
-.h-0{
-	height: 0 !important;
-}
-
 .mt-100{
 	margin-top: -100px;
-}
-
-.mt-30vh{
-	margin-top: 30vh;
 }
 
 .img-shadow{
@@ -421,14 +275,6 @@ body, html {
 }
 
 /** Index **/
-
-.main-title-box{
-	position: absolute;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	z-index: 1;
-}
 .col-left{
 	flex: 0 0 58%;
 	max-width: 58%;
@@ -745,28 +591,6 @@ div :focus{
 
 .header{
 	transition: transform 0.35s ease;
-}
-
-.top-45{
-	top: 45%;
-}
-
-.top-65{
-	top: 65%;
-}
-
-.sidebar-item{
-	height: 100%;
-}
-
-.sticky-item {
-	position: -webkit-sticky;
-	position: sticky;
-	top: 25%;
-}
-
-.mb-75vh{
-	margin-bottom: 75vh;
 }
 
   

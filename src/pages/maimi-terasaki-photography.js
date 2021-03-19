@@ -92,9 +92,11 @@ export default function MTPhotography() {
 }
 `)
 
-  useEffect(() => {
-    enterAnimation();
+useEffect(() => {
+  enterAnimation();
+}, [])
 
+  useEffect(() => {
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
@@ -158,7 +160,7 @@ export default function MTPhotography() {
         scrub: true,
     }},'+=1')
   
-  }, [])
+  })
 
   return <>
   <div className="fixed-nav w-full">
@@ -272,7 +274,7 @@ export default function MTPhotography() {
             <div className="center-flex text-white">
               <p className="text-center pb-20 font-serif text-2xl">Next Project:</p>
                 <TransitionLink to={data.markdownRemark.frontmatter.nextProjectSlug} exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
-                  entry={{ delay: 2}}><p className="text-7xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
+                  entry={{ delay: 2}}><p className="text-8xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
               </div>
 
           </BackgroundImage>

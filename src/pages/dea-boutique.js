@@ -93,9 +93,11 @@ export default function DEA() {
 }
 `)
 
-  useEffect(() => {
-    enterAnimation();
+useEffect(() => {
+  enterAnimation();
+}, [])
 
+  useEffect(() => {
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
@@ -159,7 +161,7 @@ export default function DEA() {
         scrub: true,
     }},'+=1')
   
-  }, [])
+  })
 
   return <>
   <div className="fixed-nav w-full">
@@ -198,9 +200,13 @@ export default function DEA() {
 
     <div className="bg-efefef px-20 py-40 jumbotron">
       <div className="center-text">
-        <p className="text-center margin-auto max-w-sm font-serif text-lg text-222 gs_reveal">
-          {data.markdownRemark.frontmatter.content}
-        </p>
+        <ul className="text-center margin-auto max-w-sm font-serif text-222 gs_reveal">
+          <p className="mb-4 text-2xl">Features:</p>
+          {data.markdownRemark.frontmatter.features.map(item => (
+            <li className="mb-2 text-lg">{item}</li>
+          )
+          )}
+        </ul>
       </div>
      </div>
 
@@ -252,7 +258,7 @@ export default function DEA() {
             <div className="center-flex text-white">
               <p className="text-center pb-20 font-serif text-2xl">Next Project:</p>
                 <TransitionLink to={data.markdownRemark.frontmatter.nextProjectSlug} exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
-                  entry={{ delay: 2}}><p className="text-7xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
+                  entry={{ delay: 2}}><p className="text-8xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
               </div>
 
           </BackgroundImage>

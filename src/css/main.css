@@ -115,6 +115,22 @@
 
 }
 
+@media screen and (max-width: 426px){
+	.project-header-title{
+		top: 30% !important;
+	}
+	.project-header-description {
+		margin-top: 30vh !important;
+		max-width: 230px !important;
+	}
+	.max-w-sm {
+		max-width: 17rem !important;
+	}
+	.bg-image-bold-text {
+		font-size: 8rem !important;
+	}
+}
+
 html{
 	scroll-behavior: smooth;
 }

@@ -92,6 +92,10 @@ export default function Finesse() {
 }
 `)
 
+useEffect(() => {
+  enterAnimation();
+}, [])
+
   useEffect(() => {
     enterAnimation();
 
@@ -158,7 +162,7 @@ export default function Finesse() {
         scrub: true,
     }},'+=1')
   
-  }, [])
+  })
 
   return <>
   <div className="fixed-nav w-full">
@@ -187,8 +191,7 @@ export default function Finesse() {
           <div className="project-header-description self-end mx-12 max-w-xs">
             <p  className="text-2xl font-heading">{data.markdownRemark.frontmatter.description}</p>
             <br/>
-            <a href={data.markdownRemark.frontmatter.link}
-            className="project-page-link text-xl font-serif font-semibold example text-white">
+            <a href="/" className="project-page-link text-xl font-serif font-semibold example text-white">
               <span className="hover hover-3 white">View the Website</span></a>
           </div>
         </div>
@@ -219,7 +222,7 @@ export default function Finesse() {
             <div className="center-flex text-white">
               <p className="text-center pb-20 font-serif text-2xl">Next Project:</p>
                 <TransitionLink to={data.markdownRemark.frontmatter.nextProjectSlug} exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
-                  entry={{ delay: 2}}><p className="text-7xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
+                  entry={{ delay: 2}}><p className="text-8xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
               </div>
 
           </BackgroundImage>

@@ -101,9 +101,9 @@
 		top: 30% !important;
 	}
 	.project-header-description {
-		margin-top: 30vh !important;
 		max-width: 230px !important;
 		text-align: center !important;
+		margin: 30vh auto 0 auto !important;
 	}
 	.max-w-sm {
 		max-width: 17rem !important;
@@ -114,7 +114,7 @@
 	}
 	.py-20{
 		padding-top: 3rem !important;
-		padding-bottom: 3rem !important;
+		padding-bottom: 3.5rem !important;
 	}
 	.header-gradient {
 		padding-top: 0px !important;
@@ -267,7 +267,7 @@ body, html {
 }
 
 .mt-100{
-	margin-top: -100px;
+	margin-top: -80px;
 }
 
 .img-shadow{

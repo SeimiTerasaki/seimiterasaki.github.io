@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useRef} from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
@@ -20,29 +20,6 @@ const enterAnimation = () => {
   tl.fromTo(".project-page-link", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2);
   tl.fromTo(".FiX", {y: "-20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2.5);
 
-}
-
-function animateFrom(elem, direction) {
-  direction = direction | 1;
-  var delay = .5
-  var x = 0,
-      y = direction * 100;
-
-  if(elem.classList.contains("gs_reveal_delay15")) {
-    delay = 1.5;
-  } else if(elem.classList.contains("gs_reveal_delay2")) {
-    delay = 2;
-  }
-
-  gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-    delay: delay,
-    duration: 1.25, 
-    x: 0,
-    y: 0, 
-    autoAlpha: 1, 
-    ease: "expo", 
-    overwrite: "auto"
-  });
 }
 
 function hide(elem) {
@@ -92,11 +69,19 @@ export default function Finesse() {
 }
 `)
 
-useEffect(() => {
-  enterAnimation();
-}, [])
+const projectPageBg = useRef(null)
+const nextProjectCover = useRef(null)
+const gsReveal = useRef([])
+  gsReveal.current = []
+
+  const addToRefs = el => {
+    if (el && !gsReveal.current.includes(el)) {
+      gsReveal.current.push(el);
+    }
+  };
 
   useEffect(() => {
+    enterAnimation();
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
@@ -131,36 +116,42 @@ useEffect(() => {
     });
 
       
-    gsap.to(".project-page-bg", {
+    gsap.to(projectPageBg.current, {
       yPercent: 50,
       ease: "none",
       scrollTrigger: {
-        trigger: ".jumbotron",
+        trigger: '.jumbotron',
         // start: "top bottom", // the default values
         // end: "bottom top",
         scrub: true
       }, 
     });
 
-    gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+    gsReveal.current.forEach(function(elem) {
       hide(elem); // assure that the element is hidden when scrolled into view
       
-      ScrollTrigger.create({
-        trigger: elem,
-        onEnter: function() { animateFrom(elem) }, 
+      gsap.fromTo(elem, {y: "120px", autoAlpha: 0 }, {
+        duration: 1.25, 
+        autoAlpha: 1, 
+        y: '0px',
+        ease: "expo", 
+        overwrite: "auto",
+        scrollTrigger: {
+          trigger: elem,
+          scrub: true
+        }
       });
-    });
+    }) 
 
-    gsap.to(".next-project-cover", {
+    gsap.to(nextProjectCover.current.selfRef, {
       ease: "none",
-      width: "100vw",
+      width: "100%",
       scrollTrigger: { 
-        trigger: ".next-project-cover",
+        trigger: '.next-project-cover',
         end: "bottom bottom",
         scrub: true,
     }},'+=1')
-  
-  })
+  }, [])
 
   return <>
   <div className="fixed-nav w-full">
@@ -174,7 +165,7 @@ useEffect(() => {
   <section id="___section" className="h-screen section fadeOut" data-scrollbar>
 
   <div className="project-header h-screen">
-      <div className="project-page-bg">
+      <div className="project-page-bg" ref={projectPageBg}>
       <Img loading="eager"
         className="h-screen w-full overflow-hidden relative"
         fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}
@@ -198,7 +189,7 @@ useEffect(() => {
   
     <div className="bg-offwhite jumbotron sm:px-12 md:px-18 lg:px-24">
       <div className="center-text py-20">
-        <p className="text-center margin-auto max-w-sm font-serif text-lg text-222 gs_reveal">
+        <p className="text-center margin-auto max-w-sm font-serif text-lg text-222 gs_reveal" ref={addToRefs}>
           {data.markdownRemark.frontmatter.content}
         </p>
       </div>
@@ -207,7 +198,7 @@ useEffect(() => {
      <div className="bg-white font-body">
        <div className="sm:px-8 md-px-16 lg:px-20 grid-container pb-24">
         <div className="section-0 grid grid-cols-1 mt-20">
-          <div className="gs-reveal">
+          <div className="gs-reveal" ref={addToRefs}>
             <Img loading="eager"
               fluid={data.markdownRemark.frontmatter.gallery[0].childImageSharp.fluid}
               alt={data.markdownRemark.frontmatter.gallery[0].name} />
@@ -215,7 +206,7 @@ useEffect(() => {
         </div>
       </div>
       <div className="pt-20 animate-trigger">
-          <BackgroundImage tag="div" className="scaleUp next-project-cover gs-reveal "  fluid={data.markdownRemark.frontmatter.nextProjectImage.childImageSharp.fluid}>
+          <BackgroundImage tag="div" ref={nextProjectCover} className="scaleUp next-project-cover gs-reveal "  fluid={data.markdownRemark.frontmatter.nextProjectImage.childImageSharp.fluid}>
 
             <div className="center-flex text-white">
               <p className="text-center pb-20 font-serif text-2xl">Next Project:</p>

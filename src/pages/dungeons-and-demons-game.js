@@ -200,8 +200,6 @@ useEffect(() => {
     <div className="header-gradient text-white text-center font-serif jumbotron">
       <div className="sm:px-12 md:px-18 lg:px-24">
         <div className="py-20 gs_reveal">
-        <p className="text-2xl">{data.markdownRemark.frontmatter.description}</p>
-        <br/>
         <p className="text-lg max-w-sm margin-auto">{data.markdownRemark.frontmatter.content}</p>
         </div>
 

@@ -198,8 +198,8 @@ useEffect(() => {
       </div>
     </div> 
 
-    <div className="bg-efefef px-20 py-40 jumbotron">
-      <div className="center-text">
+    <div className="bg-efefef jumbotron sm:px-12 md:px-18 lg:px-24">
+      <div className="center-text py-20">
         <ul className="text-center margin-auto max-w-sm font-serif text-222 gs_reveal">
           <p className="mb-4 text-2xl">Features:</p>
           {data.markdownRemark.frontmatter.features.map(item => (

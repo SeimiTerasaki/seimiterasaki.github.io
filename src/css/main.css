@@ -122,12 +122,18 @@
 	.project-header-description {
 		margin-top: 30vh !important;
 		max-width: 230px !important;
+		text-align: center;
 	}
 	.max-w-sm {
 		max-width: 17rem !important;
 	}
 	.bg-image-bold-text {
-		font-size: 8rem !important;
+		font-size: 6rem !important;
+    	margin-top: 7rem !important;
+	}
+	.py-20{
+		padding-top: 3rem;
+		padding-bottom: 3rem;
 	}
 }
 

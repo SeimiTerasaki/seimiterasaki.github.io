@@ -97,8 +97,6 @@ useEffect(() => {
 }, [])
 
   useEffect(() => {
-    enterAnimation();
-
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
@@ -198,8 +196,8 @@ useEffect(() => {
       </div>
     </div> 
   
-    <div className="bg-offwhite px-20 py-40 jumbotron">
-      <div className="center-text">
+    <div className="bg-offwhite jumbotron sm:px-12 md:px-18 lg:px-24">
+      <div className="center-text py-20">
         <p className="text-center margin-auto max-w-sm font-serif text-lg text-222 gs_reveal">
           {data.markdownRemark.frontmatter.content}
         </p>

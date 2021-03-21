@@ -1,7 +1,7 @@
 ---
 title: Dungeons and Demons Game
 slug: dungeons-and-demons-game
-description: "A Dungeon Crawler Game with React and rot.js"
+description: "A PC Dungeon Crawler Game with React and rot.js"
 link: "https://dungeons-and-demons.herokuapp.com/"
 image: ../src/images/assets/space-4907935_1920.jpg
 gallery:

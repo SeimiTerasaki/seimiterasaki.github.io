@@ -28,7 +28,6 @@ function enterAnim(){
    const tl = new TimelineMax();
 
     tl.set(".logo", {display: "block", width: "200.4%", opacity: 0})
-      .set(".center", {xPercent: -50, yPercent: -50, force3D:true })
       .fromTo(".right", {height: "10px", opacity: 0}, {duration: 2, height: '100vh', autoAlpha: 1, ease: Linear.easeIn})
       .fromTo(".logo", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2)
       .fromTo(".nav-transform", {opacity: 0, autoAlpha: 0}, {duration: 1, opacity: 1, autoAlpha: 1, ease: Linear.easeIn}, 2.5);

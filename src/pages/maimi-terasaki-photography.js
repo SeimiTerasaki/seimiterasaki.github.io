@@ -19,11 +19,6 @@ const enterAnimation = () => {
   tl.fromTo(".project-header-description", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 1.5)
   tl.fromTo(".project-page-link", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2);
   tl.fromTo(".FiX", {y: "-20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2.5);
-
-}
-
-function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0});
 }
 
 export default function MTPhotography() {
@@ -69,36 +64,36 @@ export default function MTPhotography() {
 }
 `)
 
+
 const projectPageBg = useRef(null)
 const nextProjectCover = useRef(null)
-const gsReveal = useRef([])
-  gsReveal.current = []
+
+  const gsReveal = useRef([]);
+  gsReveal.current = [];
 
   const addToRefs = el => {
     if (el && !gsReveal.current.includes(el)) {
       gsReveal.current.push(el);
     }
-  };
+  }
 
   useEffect(() => {
     enterAnimation();
+  },[])
+
+  useEffect(() => {
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
-  
-    gsap.registerPlugin(ScrollTrigger);
     
     ScrollTrigger.scrollerProxy("body", {
-      scrollTop(value) {
+      scrollTop(value) { 
         if (arguments.length) {
           bodyScrollBar.scrollTop = value;
-          document.getElementsByTagName("body").setAttribute("class", "scrolling");
         }
         return bodyScrollBar.scrollTop;
       },
     });
-    
-    bodyScrollBar.addListener(ScrollTrigger.update);
 
     ScrollTrigger.create({
       trigger: "nav",
@@ -114,45 +109,8 @@ const gsReveal = useRef([])
         }
       }
     });
-
-      
-    gsap.to(projectPageBg.current, {
-      yPercent: 50,
-      ease: "none",
-      scrollTrigger: {
-        trigger: '.jumbotron',
-        // start: "top bottom", // the default values
-        // end: "bottom top",
-        scrub: true
-      }, 
-    });
-
-    gsReveal.current.forEach(function(elem) {
-      hide(elem); // assure that the element is hidden when scrolled into view
-      
-      gsap.fromTo(elem, {y: "120px", autoAlpha: 0 }, {
-        duration: 1.25, 
-        autoAlpha: 1, 
-        y: '0px',
-        ease: "expo", 
-        overwrite: "auto",
-        scrollTrigger: {
-          trigger: elem,
-          scrub: true
-        }
-      });
-    }) 
-
-    gsap.to(nextProjectCover.current.selfRef, {
-      ease: "none",
-      width: "100%",
-      scrollTrigger: { 
-        trigger: '.next-project-cover',
-        end: "bottom bottom",
-        scrub: true,
-    }},'+=1')
-  
-  }, [])
+    bodyScrollBar.addListener(ScrollTrigger.update);
+  })
 
   return <>
   <div className="fixed-nav w-full">
@@ -239,7 +197,6 @@ const gsReveal = useRef([])
           </div>
 
         </div>
-
         <div className="gs_reveal mb-12" ref={addToRefs}>
           <Img
             fluid={data.markdownRemark.frontmatter.gallery[4].childImageSharp.fluid}

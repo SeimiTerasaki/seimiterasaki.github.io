@@ -22,6 +22,15 @@ exports.onCreateWebpackConfig = ({
   plugins,
   actions,
 }) => {
+  if (stage.startsWith("develop")) {
+    actions.setWebpackConfig({
+      resolve: {
+        alias: {
+          "react-dom": "@hot-loader/react-dom",
+        },
+      },
+    })
+  }
   actions.setWebpackConfig({
     resolve: {
       modules: ['node_modules'],

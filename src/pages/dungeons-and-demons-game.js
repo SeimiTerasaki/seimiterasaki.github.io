@@ -19,11 +19,6 @@ const enterAnimation = () => {
   tl.fromTo(".project-header-description", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 1.5)
   tl.fromTo(".project-page-link", {y: "20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2);
   tl.fromTo(".FiX", {y: "-20px", opacity: 0}, {duration: .8, y: '0px', opacity: 1, ease: Linear.ease}, 2.5);
-
-}
-
-function hide(elem) {
-  gsap.set(elem, {autoAlpha: 0});
 }
 
 export default function DungeonsDemons(){
@@ -71,91 +66,55 @@ export default function DungeonsDemons(){
 }
 `)
 
+
 const projectPageBg = useRef(null)
 const nextProjectCover = useRef(null)
-const gsReveal = useRef([])
-  gsReveal.current = []
+
+  const gsReveal = useRef([]);
+  gsReveal.current = [];
 
   const addToRefs = el => {
     if (el && !gsReveal.current.includes(el)) {
       gsReveal.current.push(el);
     }
-  };
+  }
 
   useEffect(() => {
     enterAnimation();
-  const scroller = document.querySelector("[data-scrollbar]");
-  const bodyScrollBar = Scrollbar.init(scroller);
-  const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
+  },[])
 
-  gsap.registerPlugin(ScrollTrigger);
-  
-  ScrollTrigger.scrollerProxy("body", {
-    scrollTop(value) {
-      if (arguments.length) {
-        bodyScrollBar.scrollTop = value;
-        document.getElementsByTagName("body").setAttribute("class", "scrolling");
-      }
-      return bodyScrollBar.scrollTop;
-    },
-  });
-  
-  bodyScrollBar.addListener(ScrollTrigger.update);
-
-  ScrollTrigger.create({
-    trigger: "nav",
-    start: "10px top",
-    end: 99999,
-    onUpdate: ({progress, direction, isActive}) => {
-      if (direction === -1) {
-        actionNav.reverse()
-      } if (direction === 1 ) {
-        actionNav.play()
-      } else if (direction === 1 && isActive === true) {
-        actionNav.play()
-      }
-    }
-  });
-
+  useEffect(() => {
+    const scroller = document.querySelector("[data-scrollbar]");
+    const bodyScrollBar = Scrollbar.init(scroller);
+    const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
     
-  gsap.to(projectPageBg.current, {
-    yPercent: 50,
-    ease: "none",
-    scrollTrigger: {
-      trigger: '.jumbotron',
-      // start: "top bottom", // the default values
-      // end: "bottom top",
-      scrub: true
-    }, 
-  });
+    ScrollTrigger.scrollerProxy("body", {
+      scrollTop(value) { 
+        if (arguments.length) {
+          bodyScrollBar.scrollTop = value;
+        }
+        return bodyScrollBar.scrollTop;
+      },
+    });
 
-  gsReveal.current.forEach(elem => {
-    hide(elem); // assure that the element is hidden when scrolled into view
-      
-    gsap.fromTo(elem, {y: "120px", autoAlpha: 0 }, {
-      duration: 1.25, 
-      autoAlpha: 1, 
-      y: '0px',
-      ease: "expo", 
-      overwrite: "auto",
-      scrollTrigger: {
-        trigger: elem,
-        scrub: true
+    ScrollTrigger.create({
+      trigger: "nav",
+      start: "10px top",
+      end: 99999,
+      onUpdate: ({progress, direction, isActive}) => {
+        if (direction === -1) {
+          actionNav.reverse()
+        } if (direction === 1 ) {
+          actionNav.play()
+        } else if (direction === 1 && isActive === true) {
+          actionNav.play()
+        }
       }
     });
-  }) 
 
+    bodyScrollBar.addListener(ScrollTrigger.update);
+  })
 
-  gsap.to(nextProjectCover.current.selfRef, {
-    ease: "none",
-    width: "100%",
-    scrollTrigger: { 
-      trigger: '.next-project-cover',
-      end: "bottom bottom",
-      scrub: true,
-  }},'+=1')
-
-}, [])
   return <>
   <div className="fixed-nav w-full">
     <nav className="pt-8 flex justify-center">
@@ -203,12 +162,12 @@ const gsReveal = useRef([])
         </div>
       
       <div className="bg-image-bold-text margin-auto">Game Play</div>
-
       <div className="gs_reveal" ref={addToRefs}>
         <p className="text-lg max-w-sm margin-auto text-center pt-16">{data.markdownRemark.frontmatter.role}</p>
       </div>
     </div>
-
+    
+    
     <div className="pt-20 animate-trigger">
           <BackgroundImage tag="div" ref={nextProjectCover} className="scaleUp next-project-cover gs-reveal "  fluid={data.markdownRemark.frontmatter.nextProjectImage.childImageSharp.fluid}>
 
@@ -217,10 +176,9 @@ const gsReveal = useRef([])
                 <TransitionLink to={data.markdownRemark.frontmatter.nextProjectSlug} exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
                   entry={{ delay: 2}}><p className="text-8xl font-heading text-center text-white">{data.markdownRemark.frontmatter.nextProject}</p></TransitionLink>
               </div>
-
+        
           </BackgroundImage>
       </div>
-
   </div>
 </section>
 </>;

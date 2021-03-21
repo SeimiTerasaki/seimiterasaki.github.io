@@ -46,7 +46,7 @@ export default function HTML(props) {
               overflow: 'hidden',
               visibility:'hidden',
               fontFamily: 'Playfair Display',
-            }}>Welcome..</p>
+            }}>Welcome...</p>
           </div>     
           </div>
         </div>

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useSiteMarkdown = () => {
   const {allMarkdownRemark} = useStaticQuery(graphql`
   {
-  allMarkdownRemark {
+  allMarkdownRemark(sort: {fields: frontmatter___title}){
     edges {
       node {
         id

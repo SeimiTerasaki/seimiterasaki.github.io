@@ -42,7 +42,7 @@ const ProjectsPage = () => {
 		enterAnim();
 		
 		window.addEventListener("wheel", e => {
-		scroll(e.deltaY);
+			scroll(e.deltaY);
 		});
 	}, [scroll])
 

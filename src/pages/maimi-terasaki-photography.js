@@ -84,6 +84,7 @@ const nextProjectCover = useRef(null)
   useEffect(() => {
     const scroller = document.querySelector("[data-scrollbar]");
     const bodyScrollBar = Scrollbar.init(scroller);
+    gsap.registerPlugin(ScrollTrigger);
     const actionNav = gsap.to('nav', {y:'-=60', duration: .5, ease: Power2.easeIn, paused:true});
     
     ScrollTrigger.scrollerProxy("body", {

@@ -508,21 +508,26 @@ div :focus{
 
 /** Project Page **/
 
+.gs_reveal{
+	transition: all .8s ease;
+}
+
 .fixed-nav{
 	position: fixed;
 	z-index: 2;
 }
 
-.project-page-bg{
-	position: absolute;
-	top: 0;
-	left: 0;
+.project-header{
+	position: relative;
 	width: 100%;
 	height: 100vh;
-	z-index: -1;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+	display: flex;
+}
+
+.parallax-bg{
+	position: absolute !important;
+	top: 0;
+	left: 0;
 }
 
 .project-header-title{
@@ -544,7 +549,6 @@ div :focus{
 
 .next-project-cover{
 	height: 100vh;
-    width: 100%;
     background-size: cover;
     background-position: 50%;
 	left: 0;
@@ -552,7 +556,7 @@ div :focus{
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    z-index: 10;
+	z-index: 10;
 }
 
 #pinSection{
@@ -591,6 +595,11 @@ div :focus{
 
 .header{
 	transition: transform 0.35s ease;
+}
+
+.transition-width{
+	transition: all 0.8s ease-out;
+    transition-duration: 1.5s;
 }
 
   

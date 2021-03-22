@@ -40,7 +40,7 @@ const About = () => {
 
     return(
         <section className="h-screen w-full text-white bg-e3a39c">
-            <SEO title="Full Stack Developer from Tokyo" />
+            <SEO title="About" />
             <header className="w-full absolute top-0 left-0 z-10">
               <div className="header bg-transparent">
                 <div className="w-full px-12 py-8">

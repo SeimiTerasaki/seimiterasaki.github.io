@@ -8,6 +8,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger"
 import {Linear, TimelineMax, gsap, Power2} from "gsap/all"
 import TransitionLink from "gatsby-plugin-transition-link"
 
+import SEO from "../components/seo"
 import VisibilityFade from '../components/visibleFade'
 import VisibilityWidth from '../components/visibleWidth'
 
@@ -117,6 +118,7 @@ useEffect(() => {
 
   return <>
   <div className="fixed-nav w-full">
+  <SEO title="Maimi Terasaki Photography" />
     <nav className="pt-8 flex justify-center">
       <TransitionLink to="/projects" exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}}
           entry={{ delay: 2}}>

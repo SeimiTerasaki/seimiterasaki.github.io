@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import Slider from "react-slick"
 import {Linear, TimelineMax} from "gsap/all"
 
+import Header from "../components/header"
 import SEO from "../components/seo"
 import {useSiteMarkdown} from "../hooks/useSiteMarkdown"
 
@@ -59,7 +60,8 @@ const ProjectsPage = () => {
 
     return (
         <div className="w-full h-screen">
-			<SEO title="Projects" />
+			<SEO title="Projects"/>
+			<Header />
 			<Slider  {...settings} ref={sliderRef}>
 			{
 				edges.map(({ node }) => (

@@ -13,13 +13,12 @@ gallery:
    - ../src/images/assets/maimi-terasaki-photography-143.png
    - ../src/images/assets/maimi-terasaki-photography-140.png
    - ../src/images/assets/maimi-terasaki-photography-146.png
-   
-content: "My vision for this website was simplicity for the design in order to make the photographs pop out. I used Hugo, a fast framework for building websites, and included the Netifly CMS for content management. Because there are so many large high-quality photos, we decided to use Cloudinary to help us deliver fast loading photos while maintaining the quality.The Welcome Page features handwritten logo design and a carousel effect of full-scale photographs."
+content: "My vision for this website was simplicity for the design in order to make the photographs pop out. I used Hugo and included the Netifly CMS for content management. Because there are so many large high-quality photos, we decided to use Cloudinary to help us deliver fast loading photos while maintaining the quality.The Welcome Page features handwritten logo design and a carousel effect of full-scale photographs."
 role: "Creation of the new website for Maimi Terasaki"
 features: ["Languages and tools used: Hugo, Go, NodeJS, maintained by Netifly CMS."]
 nextProject: DEA Boutique
-nextProjectSlug: /dea-boutique
-nextProjectImage: ../src/images/assets/bathroom.jpg
+nextProjectSlug: dea-boutique
+nextProjectImage: ../src/images/assets/christmas-collection.jpg
 ---
 
 

@@ -11,6 +11,6 @@ content: "The planning for this website was very simple. Break down the pages of
 role: ""
 features: ["Please note this website has been deprecated as her business is now closed. The website is now being hosted on my Guthub pages."] 
 nextProject:  Maimi Terasaki Photography
-nextProjectSlug: /maimi-terasaki-photography
+nextProjectSlug: maimi-terasaki-photography
 nextProjectImage: ../src/images/assets/Carousel5.jpg
 ---

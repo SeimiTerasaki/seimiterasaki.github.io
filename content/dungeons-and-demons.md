@@ -11,6 +11,6 @@ content: "This project came about from FreeCodeCamp's Take Home Projects challen
 role: "When the user fights an enemy, each takes turns damaging each other until someone loses. The user has to maintain enough health (from the potions) and strength (from the weapons) in order to defeat the enemy. In order to proceed to the next level the user will have to defeat the arch mage.The user can move anywhere within the map's boundaries, but can't move through an enemy until it's beaten. Much of the map is hidden. When the user takes a step, all spaces that are within a certain number of spaces from the user are revealed."
 features: ["I used an RPG tileset for the each game sprite, each of which is 32x32 pixel large.", "Back-end: Node.js.Front-end: ReactJS, CSS, ROT.js"]
 nextProject: Finesse Organisation
-nextProjectSlug: /finesse-organisation
+nextProjectSlug: finesse-organisation
 nextProjectImage: ../src/images/assets/bedroom-1006526_1920.jpg
 ---

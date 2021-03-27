@@ -8,11 +8,51 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
-      name: `slug`,
+      slug: `slug`,
       node,
       value,
     })
   }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  const projectPage = path.resolve('./src/templates/projectPage.js')        
+
+  return graphql(`
+  {
+    allMarkdownRemark{
+      edges {
+        node {
+          id
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  }
+    `).then( result => {
+
+      if(result.error){
+        throw new Error(result.errors)
+      }
+
+      const Project = result.data.allMarkdownRemark.edges
+
+      Project.forEach(({ node }) => {
+        node.url = `projects/${node.frontmatter.slug}/`
+
+      createPage({
+          path: node.url,
+          component:  projectPage,
+          context: {
+            slug: node.frontmatter.slug,
+        },
+      })
+    })
+  })
 }
 
 exports.onCreateWebpackConfig = ({

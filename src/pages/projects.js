@@ -66,7 +66,7 @@ const ProjectsPage = () => {
 			{
 				edges.map(({ node }) => (
 				<div key={node.id} className="project-slide">
-					<TransitionLink to={`/${node.frontmatter.slug}`} className="project-transition-link color-ff9170"
+					<TransitionLink to={`${node.frontmatter.slug}`} className="project-transition-link color-ff9170"
 				exit={{ trigger: ({ exit, node }) => exitPage(exit, node), length: 2}} entry={{ delay: 2}}>
 					<>
 					<div className="project-title-container">

@@ -108,9 +108,19 @@ useEffect(() => {
                     <div className="project-header-description self-end mx-12 max-w-xs">
                     <p  className="text-2xl font-heading">{project.description}</p>
                     <br/>
-                    <a href={project.link}
-                    className="project-page-link text-xl font-serif font-semibold example text-white">
-                        <span className="hover hover-3 white">View the Website</span></a>
+
+                    {(() => {
+                      if(project.title==="Finesse Organisation"){
+                        return <div className="project-page-link hidden"/>
+                      } else {
+                        return(
+                          <a href={project.link} className="project-page-link text-xl font-serif font-semibold example text-white">
+                            <span className="hover hover-3 white">View the Website</span>
+                          </a>
+                        )
+                      }
+                    })()}
+
                     </div>
                 </div>
                 </div>

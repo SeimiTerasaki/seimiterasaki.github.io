@@ -69,7 +69,7 @@ const About = () => {
                     <p> Hi there! Thanks for checking out my page. </p>
                     <br/>
                     <p>
-                      I'm a Fullstack Developer from Tokyo specializing in the progressive web apps using Javascript and its frameworks ReactJS and NodeJS. 
+                      I'm a Fullstack Developer from Tokyo specializing in progressive web apps using Javascript and its frameworks ReactJS and NodeJS. 
                     </p>
                     <br/>
                     <p>I enjoy turning complex problems into simple, beautiful and intuitive algorythms.</p>

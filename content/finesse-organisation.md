@@ -1,7 +1,7 @@
 ---
 title: Finesse Organisation
 slug: finesse-organisation
-description: "Website reaction and logo design"
+description: "Website and logo design"
 link: ""
 image: ../src/images/assets/bedroom-1006526_1920.jpg
 gallery:

@@ -2,7 +2,7 @@
 title: Maimi Terasaki Photography
 slug: maimi-terasaki-photography
 description: "Website design and creation"
-link: "https://www.maimiterasakiphotography.com/"
+link: "https://maimi-terasaki.netlify.app"
 image: ../src/images/assets/Carousel5.jpg
 gallery:
   - ../src/images/assets/1.png
@@ -13,7 +13,7 @@ gallery:
   - ../src/images/assets/maimi-terasaki-photography-143.png
   - ../src/images/assets/maimi-terasaki-photography-140.png
   - ../src/images/assets/maimi-terasaki-photography-146.png
-content: "My vision for this website was simplicity for the design in order to make the photographs pop out. I used Hugo and included the Netifly CMS for content management. Because there are so many large high-quality photos, we decided to use Cloudinary to help us deliver fast loading photos while maintaining the quality.The Welcome Page features handwritten logo design and a carousel effect of full-scale photographs."
+content: "As of April 26th, 2021, this website is deprecated and is being hosted on Netlify only as a design showcase for my portfolio. This website was built with HugoJS, Netlify CMS, and Cloudinary for image management"
 role: "Creation of the new website for Maimi Terasaki"
 features:
   ["Languages and tools used: Hugo, Go, NodeJS, maintained by Netifly CMS."]

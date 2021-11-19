@@ -84,7 +84,7 @@ export default function IndexPage() {
             <div className="logo z-20">
               <p className="font-heading text-7xl main-title z-30">Seimi Terasaki</p>
               <br/>
-                <p className="text-2xl z-30">Front-end Developer for EBCONT</p>
+                <p className="text-2xl z-30">Front-end Developer & IT Consultant for EBCONT</p>
             </div>
          
         </div>
@@ -93,7 +93,7 @@ export default function IndexPage() {
           <div className="logo z-20">
             <h1 className="font-heading text-7xl main-title z-30">Seimi Terasaki</h1>
             <br/>
-              <p className="text-2xl z-30 example">Front-end Developer for
+              <p className="text-2xl z-30 example">Front-end Developer  & IT Consultant for
                   <span className="hover hover-3 white">
                     <a rel="noopener noreferrer"  href="https://www.ebcont.com/" target="_blank"> EBCONT</a>
                 </span>

@@ -1,7 +1,7 @@
 ---
 title: Natunura
 slug: natunura
-description: "Front-end Developer"
+description: "Front-end Developer at Lean Coders"
 link: "https://natunura.com"
 image: ../src/images/assets/hero.jpg
 gallery:
@@ -16,7 +16,7 @@ gallery:
   - ../src/images/assets/natunura006.png
   - ../src/images/assets/natunura001.png
   - ../src/images/assets/natunura005.png
-content: "Worked with a team of developers to create and design components. Continuously refactored and optimized the system to improve the efficiency and quality of the development cycles."
+content: "Worked with an amazing team of developers at Lean Coders to create and design components. Continuously refactored and optimized the system to improve the efficiency and quality of the development cycles."
 role: "random shit"
 features: []
 nextProject: Dungeons and Demons Game

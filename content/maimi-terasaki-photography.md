@@ -17,7 +17,7 @@ content: "As of April 26th, 2021, this website is deprecated and is being hosted
 role: "Creation of the new website for Maimi Terasaki"
 features:
   ["Languages and tools used: Hugo, Go, NodeJS, maintained by Netifly CMS."]
-nextProject: DEA Boutique
-nextProjectSlug: dea-boutique
-nextProjectImage: ../src/images/assets/christmas-collection.jpg
+nextProject: Natunura
+nextProjectSlug: natunura
+nextProjectImage: ../src/images/assets/hero.jpg
 ---

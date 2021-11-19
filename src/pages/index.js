@@ -63,7 +63,7 @@ export default function IndexPage() {
 
   return(
     <section className="h-screen" data-scrollbar>
-    <SEO title="Full Stack Developer from Tokyo" />
+    <SEO title="Front-end Developer from Tokyo" />
       <div className="section-1 h-screen">
         <div className="navbar-side">
         <TransitionLink to="/about" exit={{ trigger: ({ exit, node }) => exitPageRight(exit, node), length: 2}}
@@ -84,7 +84,7 @@ export default function IndexPage() {
             <div className="logo z-20">
               <p className="font-heading text-7xl main-title z-30">Seimi Terasaki</p>
               <br/>
-                <p className="text-2xl z-30">Full-stack Web Developer</p>
+                <p className="text-2xl z-30">Front-end Developer for EBCONT</p>
             </div>
          
         </div>
@@ -93,7 +93,11 @@ export default function IndexPage() {
           <div className="logo z-20">
             <h1 className="font-heading text-7xl main-title z-30">Seimi Terasaki</h1>
             <br/>
-              <p className="text-2xl z-30">Full-stack Web Developer</p>
+              <p className="text-2xl z-30 example">Front-end Developer for
+                  <span className="hover hover-3 white">
+                    <a rel="noopener noreferrer"  href="https://www.ebcont.com/" target="_blank"> EBCONT</a>
+                </span>
+              </p>
           </div>
         </div>
       </div>

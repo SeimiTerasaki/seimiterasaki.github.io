@@ -57,8 +57,8 @@ const About = () => {
             <div className="pt-24 bg-e3a39c">
                 <div className="marquee-wrapper font-heading">
                     <div className="marquee-animation">
-                        <span>An APPLE per day keeps the code clean...</span>
-                        <span>An APPLE per day keeps the code clean...</span>
+                        <span>"Clean code always looks like it was written by someone who cares" -- Robert C. Martin</span>
+                        <span>"Clean code always looks like it was written by someone who cares" -- Robert C. Martin</span>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 sm:px-8 md-px-16 lg:px-20 grid-container">
@@ -69,7 +69,7 @@ const About = () => {
                     <p> Hi there! Thanks for checking out my page. </p>
                     <br/>
                     <p>
-                      I'm a Fullstack Developer from Tokyo specializing in progressive web apps using Javascript and its frameworks ReactJS and NodeJS. 
+                      I'm a Web Developer from Tokyo specializing in progressive web apps using Javascript and its frameworks ReactJS and NodeJS. 
                     </p>
                     <br/>
                     <p>I enjoy turning complex problems into simple, beautiful and intuitive algorythms.</p>
@@ -107,7 +107,7 @@ const About = () => {
                   <div className="inline-flex items-center sm-hidden">
                     <FaPhoneAlt className="mx-2" />
                     <div className="example">
-                        <span className="hover hover-3 white">+43 6765988226</span>
+                        <span className="hover hover-3 white">+43 68120290334</span>
                       </div>
                   </div>
                   

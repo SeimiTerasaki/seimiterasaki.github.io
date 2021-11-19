@@ -33,7 +33,7 @@ const ProjectPage = (props) => {
     var secondColumn;
     var fullRow;
 
-    if(project.title === "Maimi Terasaki Photography"){
+    if(project.title === "Maimi Terasaki Photography" || project.title === "Natunura"){
         firstColumn = project.gallery.slice(0, 2);
         secondColumn = project.gallery.slice(3, 5);
         fullRow = project.gallery.slice(5);
@@ -101,33 +101,23 @@ useEffect(() => {
                 fluid={project.image.childImageSharp.fluid}
                 alt={project.image.name}/>
                 <div className="w-full">
-                <div className="center-flex text-white">
+                  <div className="center-flex text-white">
                     <div className="project-header-title">
                     <p  className="text-8xl font-heading text-center">{project.title}</p>
                     </div>
                     <div className="project-header-description self-end mx-12 max-w-xs">
                     <p  className="text-2xl font-heading">{project.description}</p>
                     <br/>
-
-                    {(() => {
-                      if(project.title==="Finesse Organisation"){
-                        return <div className="project-page-link hidden"/>
-                      } else {
-                        return(
-                          <a href={project.link} className="project-page-link text-xl font-serif font-semibold example text-white">
-                            <span className="hover hover-3 white">View the Website</span>
-                          </a>
-                        )
-                      }
-                    })()}
-
-                    </div>
+                    <a href={project.link} className="project-page-link text-xl font-serif font-semibold example text-white">
+                      <span className="hover hover-3 white">View the Website</span>
+                    </a>
+                  </div>
                 </div>
                 </div>
             </div> 
 
            {(() => {
-            if(project.title==="Maimi Terasaki Photography"){
+            if(project.title==="Maimi Terasaki Photography" || project.title === "Natunura"){
                 return(
                     <>
                     <div className="bg-offwhite jumbotron sm:px-12 md:px-18 lg:px-24">
@@ -218,7 +208,7 @@ useEffect(() => {
                     </div>
                 </>
                 )
-        } else if(project.title==="DEA Boutique"){
+        } else if(project.title==="DEA Boutique" || project.title==="Natunura"){
             return(
                 <>
                 <div className="bg-efefef jumbotron sm:px-12 md:px-18 lg:px-24">

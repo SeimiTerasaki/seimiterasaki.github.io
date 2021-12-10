@@ -101,7 +101,7 @@ const About = () => {
                     <FaFileAlt className="mx-2" />
                     <div className="example">
                         <span className="hover hover-3 white">
-                          <a rel="noopener noreferrer" href={PDF} target="_blank">Resume</a></span>
+                          Resume</span>
                       </div>
                   </div>
                   <div className="inline-flex items-center sm-hidden">
